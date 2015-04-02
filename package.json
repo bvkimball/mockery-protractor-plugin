@@ -1,5 +1,5 @@
 {
-  "name": "MockeryProtractorPlugin",
+  "name": "mockery-protractor-plugin",
   "author": {
 	"name": "Brian Kimball",
 	"email": "bvkimball@gmail.com"
