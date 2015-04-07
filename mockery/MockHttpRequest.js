@@ -86,11 +86,8 @@ var MockHttpRequest = (function () {
 
 				var path = getPath(url);
 				var found = responders.filter(function (res, i) {
-					//todo, convert res.url to regular expression
 					var route = res.url,
-					    // "/users/:uid/pictures";
-					matcher = new RegExp(route.replace(/:[^\s/]+/g, "([\\w-]+)"));
-
+					    matcher = new RegExp(route.replace(/:[^\s/]+/g, "([\\w-]+)") + "([?|/]|$)");
 					return method == res.method && path.match(matcher);
 				});
 
@@ -106,11 +103,16 @@ var MockHttpRequest = (function () {
 						var key = keys[i];
 						params[key] = matched[i];
 					}
+					var query = {},
+					    search = url.indexOf("?") >= 0 ? url.split("?")[1] : "";
+					search.replace(new RegExp("([^?=&]+)(=([^&]*))?", "g"), function ($0, $1, $2, $3) {
+						query[decodeURIComponent($1)] = decodeURIComponent($3);
+					});
 					this.request = {
 						method: method,
 						path: path,
 						params: params,
-						//headers: null,
+						query: query,
 						responseType: "application/json",
 						callback: responder.callback
 					};
