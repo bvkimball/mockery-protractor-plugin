@@ -1,10 +1,26 @@
 {
   "name": "mockery-protractor-plugin",
-  "author": {
-	"name": "Brian Kimball",
-	"email": "bvkimball@gmail.com"
+  "author": "Brian Kimball <bvkimball@gmail.com>",
+  "version": "0.1.1",
+  "devDependencies": {},
+  "description": "A protractor plugin for mocking server responses when not using angular $http service",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "version": "0.1.0",
-  "devDependencies": {
-  }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bvkimball/mockery-protractor-plugin.git"
+  },
+  "keywords": [
+    "mock",
+    "http",
+    "xhr",
+    "rest"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bvkimball/mockery-protractor-plugin/issues"
+  },
+  "homepage": "https://github.com/bvkimball/mockery-protractor-plugin#readme"
 }
