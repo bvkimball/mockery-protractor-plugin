@@ -134,6 +134,7 @@ var MockHttpRequest = (function () {
 					this.request.send(data);
 				} else {
 					request.data = data;
+					request.body = typeof data == "object" ? data : JSON.parse(data);
 					request.callback.call(this, request, this);
 					if (this.status < 400) {
 						if (this.usingReadyStateChange) {
