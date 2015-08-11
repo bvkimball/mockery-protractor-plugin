@@ -19,13 +19,13 @@ npm install mockery-protractor-plugin --save-dev
 Add the following to your `protractor.conf.js` file.
 
 ```js
-    plugins: [{
-         package: 'mockery-protractor-plugin',
-		 files: [
-			 '../../test/mock/state.js',
-			 '../../test/mock/routes.js'
-		 ]
-	}],
+plugins: [{
+     package: 'mockery-protractor-plugin',
+     files: [
+         '../../test/mock/state.js',
+         '../../test/mock/routes.js'
+     ]
+}],
 ```
 
 ### How does it work?
