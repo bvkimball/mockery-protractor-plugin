@@ -39,7 +39,9 @@ function setup(config) {
 		console.log('add file', SRC_FILES[i]);
 		scripts += fs.readFileSync(SRC_FILES[i], 'utf-8');
 	}
-	scripts += " Mockery.setup();";
+    
+    config.xhr = config.xhr ? "'" + config.xhr + "'" : '';
+	scripts += " Mockery.setup(" + config.xhr + ");";
 	browser.addMockModule('mockery', function() {
 		angular.module('mockery', [])
 			.value('$plugin', arguments[0])

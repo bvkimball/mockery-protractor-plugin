@@ -25,8 +25,10 @@ var Mockery = (function () {
 		},
 		setup: {
 			value: function setup() {
+				var xhr = arguments[0] === undefined ? "XMLHttpRequest" : arguments[0];
+
 				if (supportsXHR) {
-					global.XHR = MockHttpRequest;
+					global[xhr] = MockHttpRequest;
 				}
 				if (supportsActiveX) {
 					global.ActiveXObject = function ActiveXObject(objId) {
