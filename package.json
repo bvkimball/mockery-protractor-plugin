@@ -1,7 +1,7 @@
 {
   "name": "mockery-protractor-plugin",
   "author": "Brian Kimball <bvkimball@gmail.com>",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "devDependencies": {},
   "description": "A protractor plugin for mocking server responses when not using angular $http service",
   "main": "index.js",
