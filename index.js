@@ -21,9 +21,9 @@ var fs = require('fs'),
  */
 
 
-function setup(config) {
+function setup() {
 	console.log('Setup');
-
+    var config = this.config;
 	var SRC_FILES = [
 		path.join(__dirname, './lodash.js'),
 		path.join(__dirname, './mockery/MockHttpRequest.js'),
